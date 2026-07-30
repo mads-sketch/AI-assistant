@@ -1,9 +1,12 @@
 name = input("What is your name? ")
 
 if name == "Madeleine":
-    print("Hello Madeleine! It's nice to see you again.")
+    print("HELLO, MADELEINE! 👋")
 else:
     print("Hello " + name + "! I am your AI assistant.")
+
+favorite_subject = input("What's your favorite subject? ")
+print("I'll remember that your favorite subject is " + favorite_subject + ".")
 
 while True:
     choice = input("What do you want to do? ")
