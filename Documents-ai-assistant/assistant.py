@@ -1,3 +1,21 @@
+def add_task():
+    task = input("What task do you want to add? ")
+
+    with open("tasks.txt", "a") as file:
+        file.write(task + "\n")
+
+    print("Task added: " + task)
+def show_tasks():
+    with open("tasks.txt", "r") as file:
+        tasks = file.readlines()
+
+    print("Your tasks:")
+
+    for task in tasks:
+        print("- " + task.strip())
+def show_help():
+    print("Available commands:")
+
 def show_help():
     print("Available commands:")
     print("- hello")
@@ -5,21 +23,28 @@ def show_help():
     print("- school")
     print("- favorite")
     print("- help")
+    print("- about me")
+    print("- task")
     print("- quit")
+
 
 def greet():
     print("Hello!")
     print("Welcome!")
     print("Let's build an AI assistant!")
-name = input("What is your name? ")
+
 
 def favorite():
     print("My favorite thing is helping Madeleine build this AI!")
+
+
+name = input("What is your name? ")
 
 if name == "Madeleine":
     print("HELLO, MADELEINE! 👋")
 else:
     print("Hello " + name + "! I am your AI assistant.")
+
 
 try:
     with open("memory.txt", "r") as file:
@@ -43,6 +68,7 @@ except FileNotFoundError:
 
     print("I'll remember that your favorite subject is " + favorite_subject + ".")
 
+
 while True:
     choice = input("What do you want to do? ")
 
@@ -62,7 +88,14 @@ while True:
         show_help()
 
     elif choice == "about me":
-        print("I am an AI assistant created by Madeleine. I can tell jokes, remember your favorite subject, and help you with school!")
+        print("I am an AI assistant created by Madeleine.")
+        print("I can tell jokes, remember your favorite subject, and help you with school!")
+
+    elif choice == "task":
+        add_task()
+
+    elif choice == "tasks":
+        show_tasks()
 
     elif choice == "quit":
         print("Goodbye!")
@@ -71,5 +104,5 @@ while True:
     else:
         print("I'm not sure how to do that yet.")
 
+
 greet()
-        
